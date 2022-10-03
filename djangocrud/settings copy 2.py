@@ -97,13 +97,10 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 #    }
 #}
 DATABASES = {
-    'default': 
-    ###'ENGINE': 'django.db.backends.sqlite3',
-    ###    'NAME': BASE_DIR / 'db.sqlite3', }
-        dj_database_url.config( 
-            default='postgresql://postgres:postgres@localhost/postgres', conn_max_age=600)
-
-        }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:postgres@localhost/postgres', conn_max_age=600
+    )
+}
 
 
 
@@ -149,7 +146,7 @@ if not DEBUG:
    
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-LOGIN_URL = '/signin/'
+LOGIN_URL = '/signin'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

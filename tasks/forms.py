@@ -1,12 +1,12 @@
 
-from logging import PlaceHolder
-from pyexpat import model
-from tkinter import Place
-from django import forms 
-from .models import Task
-import datetime
 
-class TaskForm(forms.ModelForm):
+#from django.forms import ModelForm
+from django import forms
+from .models import Task
+from django.forms import ModelForm
+
+
+class TaskForm(ModelForm):
     class Meta:
         model= Task
         fields = ['title', 'description', 'duedate', 'important']
